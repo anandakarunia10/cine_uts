@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'providers/movie_provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/movie_catalog_screen.dart';
 import 'screens/watchlist_profile_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Inisialisasi Supabase dengan credential publik / anon key
+  await Supabase.initialize(
+    url: 'https://xyzcompany.supabase.co', // Ganti dengan URL Supabase milikmu nanti
+    publishableKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...', // Ganti dengan Anon Key milikmu nanti
+  );
+
   runApp(
     MultiProvider(
       providers: [
