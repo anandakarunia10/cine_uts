@@ -116,29 +116,31 @@ class _AddWatchlistScreenState extends State<AddWatchlistScreen> {
               const SizedBox(height: 8),
               Row(
                 children: [
-                  RatingBar.builder(
-                    initialRating: _personalRating / 2,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    itemBuilder: (context, _) => const Icon(
-                      Icons.star,
-                      color: Colors.amber,
+                  Expanded(
+                    child: RatingBar.builder(
+                      initialRating: _personalRating / 2,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemSize: 28, // Ukuran bintang disesuaikan agar pas
+                      itemPadding: const EdgeInsets.symmetric(horizontal: 2.0),
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star_rounded,
+                        color: Colors.amber,
+                      ),
+                      onRatingUpdate: (rating) {
+                        setState(() {
+                          _personalRating = rating * 2;
+                        });
+                      },
                     ),
-                    onRatingUpdate: (rating) {
-                      setState(() {
-                        _personalRating = rating * 2;
-                      });
-                    },
                   ),
-                  const SizedBox(width: 12),
                   Text(
                     '${_personalRating.toStringAsFixed(1)} / 10.0',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: 15,
                     ),
                   ),
                 ],
@@ -169,7 +171,7 @@ class _AddWatchlistScreenState extends State<AddWatchlistScreen> {
                   onPressed: _isSubmitting ? null : _submitForm,
                   child: _isSubmitting
                       ? const CircularProgressIndicator()
-                      : const Text('Simpan ke Database'),
+                      : const Text('Simpan'),
                 ),
               ),
             ],

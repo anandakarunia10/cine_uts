@@ -12,8 +12,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Supabase.initialize(
-    url: 'https://xyzcompany.supabase.co', // Gantilah dengan URL Supabase milikmu
-    publishableKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...', // Gantilah dengan Anon/Publishable Key milikmu
+    url: 'https://vlykszwztqgsjkfpmzim.supabase.co', // Gantilah dengan URL Supabase milikmu
+    publishableKey: 'sb_publishable_HFx0w6rVohTNjPgesezdww_2N2hmFnK', // Gantilah dengan Anon/Publishable Key milikmu
   );
 
   runApp(
@@ -38,7 +38,7 @@ class CineLogApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color(0xFF0F172A),
         primaryColor: const Color(0xFF6366F1),
-        textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
+        textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
         colorScheme: const ColorScheme.dark(
           primary: Color(0xFF6366F1),
           surface: Color(0xFF1E293B),
