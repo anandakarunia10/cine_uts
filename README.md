@@ -1,17 +1,43 @@
-# uts_2455011010_nanda
+# CineLog - Movie Explorer & Watchlist Journal 🎬
 
-A new Flutter project.
+Aplikasi mobile Flutter untuk mencari katalog film terkini dan mengelola jurnal tontonan pribadi secara interaktif. Dibuat untuk memenuhi kriteria penugasan UTS Pemrograman Mobile.
 
-## Getting Started
+## 👤 Identitas Mahasiswa
+* **Nama:** Gede Ananda Karunia Putra
+* **NIM:** 2455011010
+* **Kelas:** D4 TRPL (Teknologi Rekayasa Perangkat Lunak)
+* **Mata Kuliah:** Pemrograman Mobile
+* **Dosen Pengampu:** Dr. Ir. I Ketut Resika Arthana, S.T., M.Kom.
+* **Teaching Assistant:** Made Yuda Sadewa, S.Pd.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Fitur Utama
+1. **Home / Dashboard:** Menampilkan film trending terkini minggu ini dari TMDB API.
+2. **Movie Catalog & Search:** Katalog film dengan fitur pencarian judul film secara real-time.
+3. **Movie Detail:** Menampilkan informasi detail film, poster, rating, dan sinopsis.
+4. **Add Watchlist (Create):** Form validasi untuk menambah film ke jurnal tontonan personal.
+5. **Edit Watchlist (Update):** Form pembaruan status tontonan, rating pribadi, dan ulasan catatan.
+6. **My Watchlist & Profile (Read & Delete):** Menampilkan daftar jurnal tersimpan dari Supabase database, fitur hapus dengan konfirmasi dialog, dan info profil mahasiswa.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Tech Stack & Integration
+* **Framework:** Flutter (Dart SDK)
+* **State Management:** Provider (`ChangeNotifierProvider`)
+* **REST API:** TMDB (The Movie Database API) — HTTP GET
+* **Backend Database:** Supabase (PostgreSQL) — CRUD Operations
+* **UI Utilities:** Google Fonts, CachedNetworkImage, Flutter Rating Bar
+
+---
+
+## 📐 Arsitektur Aplikasi
+```text
+lib/
+├── models/         # MovieModel & WatchlistModel
+├── services/       # TmdbApiService & SupabaseService
+├── repositories/   # MovieRepository & WatchlistRepository
+├── providers/      # MovieProvider & WatchlistProvider
+├── screens/        # 6 Main Screens
+├── widgets/        # Reusable Custom Widgets
+└── main.dart       # App Shell & Entrypoint
