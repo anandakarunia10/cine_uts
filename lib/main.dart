@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'providers/movie_provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/movie_catalog_screen.dart';
 import 'screens/watchlist_profile_screen.dart';
 
 void main() {
-  runApp(const CineLogApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => MovieProvider()),
+      ],
+      child: const CineLogApp(),
+    ),
+  );
 }
 
 class CineLogApp extends StatelessWidget {
